@@ -1,0 +1,8 @@
+.my-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel .slide {
+  background: transparent;
+}

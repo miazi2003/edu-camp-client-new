@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.font {
+   font-family: "Lato", sans-serif;
+}
+
+.fontSec {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight : 700;
+}
+
+.clip{
+    clip-path: polygon(50% 0%, 93% 9%, 100% 43%, 93% 76%, 68% 100%, 32% 100%, 18% 80%, 0% 43%, 15% 15%);
+}
+.blend{
+    mix-blend-mode: multiply;
+    filter: brightness(10);
+}
+
+.bannerBg{
+    background-image: url('https://i.ibb.co/gZpHMdWN/emerald-green-78428.jpg');
+}
+
+.primary{
+background-color: #016630;
+}
+.hoverBg{
+    background-color: white;
+}
+.active{
+    color: #016630;
+    
+}
+
+
+
+body {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  background-color: white;
+}
+body.dark .navbar {
+  background-color: #1f1f1f;
+}
+
+.hero {
+  background-color: white;
+}
+body.dark .hero {
+  background-color: transparent;
+}
+
+.bGround{
+     background-color: white;
+}
+
+body.dark .bGround{
+      background-color: #1f1f1f;
+}
+
+body.dark .text{
+    color: black;
+}
+
+body.dark .textWhite{
+    color: white;
+}
+
+
+
+
+
+.card {
+  background-color: white;
+}
+body.dark .card {
+  background-color: #1f1f1f;
+  color: white;
+  border:1px solid white;
+}
+
+
+.assignment {
+  background-color: white;
+  color: black;
+}
+body.dark .assignment {
+  background-color: #1f1f1f;
+  color: white; 
+}
+
+
+
+.assignmentSubmit {
+  background-color: white;
+  color: black;
+}
+body.dark .assignmentSubmit {
+  background-color: #1f1f1f;
+  color: white; 
+}
+
+
+
+

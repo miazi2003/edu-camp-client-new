@@ -1,0 +1,237 @@
+/* ===== GLOBAL SAFETY ===== */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary-color: #0a8d4f;
+  --primary-color-dark: #088044;
+  --primary-color-light: #10b669;
+
+  --text-dark: #1f2937;
+  --text-medium: #4b5563;
+  --text-light: #6b7280;
+  --text-white: #ffffff;
+
+  --bg-white: #ffffff;
+  --bg-soft: #f9fafb;
+
+  --border-color: #eef2f7;
+
+  --shadow-soft:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 10px 24px rgba(10, 141, 79, 0.06);
+
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== BANNER ONE ===== */
+.banner-one {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  gap: clamp(1rem, 3vw, 2rem);
+
+  min-height: 55vh;
+  background-color: var(--bg-white);
+
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== SUBTLE BACKGROUND ACCENT ===== */
+.banner-one::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 40%;
+  max-width: 720px;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 141, 79, 0.06),
+    rgba(255, 255, 255, 0.95)
+  );
+  border-radius: var(--radius-xl);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1 1 min(450px, 100%);
+  max-width: 520px;
+  z-index: 1;
+}
+
+.head {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.head .highlight {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    #22c55e
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.para {
+  margin: 1rem 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-medium);
+}
+
+/* ===== CTA BUTTON ===== */
+.get {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.get:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== IMAGE AREA ===== */
+.image-area {
+  position: relative;
+  flex: 1 1 min(320px, 100%);
+  max-width: 420px;
+  min-height: 320px;
+  z-index: 1;
+}
+
+/* ===== IMAGE BACKGROUND SHAPE ===== */
+.background-shape {
+  position: absolute;
+  inset: auto 0 0 auto;
+  width: 100%;
+  max-width: 320px;
+  max-height: 360px;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  z-index: 0;
+}
+
+/* ===== IMAGE FRAME ===== */
+.image-frame {
+  position: relative;
+  width: min(280px, 90%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.main-img:hover {
+  transform: scale(1.04);
+}
+
+/* ===== FLOATING BADGE ===== */
+.floating-badge {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .banner-one {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .content,
+  .image-area {
+    max-width: 100%;
+  }
+
+  .floating-badge {
+    position: relative;
+    margin-top: 1rem;
+  }
+}
+
+/* ===== DARK MODE (SOFT, NOT HEAVY) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-white: #111827;
+    --text-dark: #f9fafb;
+    --text-medium: #d1d5db;
+    --border-color: #1f2937;
+  }
+
+  body {
+    background-color: #0f172a;
+  }
+
+  .banner-one {
+    background-color: #111827;
+  }
+
+  .background-shape {
+    background: linear-gradient(135deg, #111827, #1f2937);
+  }
+
+  .floating-badge {
+    background-color: #111827;
+  }
+}
